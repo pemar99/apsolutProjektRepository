@@ -1,6 +1,6 @@
 {
   "name": "apsolutProjekt",
-  "description": "Leerer Prozess",
+  "description": "Robotic Process Automation im Rahmen der Eingliederung neuer Mitarbeiter",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.7.2]",
