@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="PDF_extrahieren" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="624,1949" sap2010:WorkflowViewState.IdRef="PDF_extrahieren_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="PDF_extrahieren" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="624,1989" sap2010:WorkflowViewState.IdRef="PDF_extrahieren_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -61,7 +61,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment sap:VirtualizedContainerService.HintSize="562,207" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Eine Datei, die auf der Festplatte liegt wird in einen Data Table und dann in eine .csv umgewandelt. &#xA;Dateipfade müssen angepasst werden, je nach Nutzer.&#xA;Die .csv-Datei &quot;neuesPersonal&quot; beinhaltet die neuen Daten.&#xA;In der Datei ist ein Komma hinter jedem Eintrag, das mit der Funktion &quot;item.Replace(&quot;,&quot;, [item].Empty)&quot; entfernt werden kann, nachdem man es als Variable extrahiert hat." />
-    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="C:\Users\Jan\Dropbox\2019 - Projekt - apsolut GmbH\- Gemeinsamer Ordner -\Personalbogen_Vorlage.pdf" sap:VirtualizedContainerService.HintSize="562,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[text]" />
+    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="Ressourcen\Personalbogen_Vorlage.pdf" sap:VirtualizedContainerService.HintSize="562,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[text]" />
     <Assign sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="s:String[]">[newText]</OutArgument>
@@ -137,6 +137,6 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="False" DataTable="[newdatatable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="C:\Users\Jan\Dropbox\2019 - Projekt - apsolut GmbH\- Gemeinsamer Ordner -\Untitled.csv" sap:VirtualizedContainerService.HintSize="562,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
+    <ui:WriteCsvFile Encoding="{x:Null}" AddHeaders="False" DataTable="[newdatatable]" Delimitator="Comma" DisplayName="Write CSV" FilePath="Ressourcen\mitarbeiter.csv" sap:VirtualizedContainerService.HintSize="562,152" sap2010:WorkflowViewState.IdRef="WriteCsvFile_1" />
   </Sequence>
 </Activity>
