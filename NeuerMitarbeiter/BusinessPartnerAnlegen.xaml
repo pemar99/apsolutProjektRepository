@@ -107,14 +107,7 @@
         <ui:Comment sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Mit dem richtigen Row- und Column-Index wird die richtige Variable aus der csv extrahiert und wird in eine String konvertiert. Außerdem wird das Komma entfernt.&#xA;" />
       </Sequence>
       <FlowStep.Next>
-        <FlowDecision x:Name="__ReferenceID0" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.5,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
-          <FlowDecision.Condition>
-            <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="BPanlegen.Equals(&quot;Ja&quot;)">
-              <mva:VisualBasicValue.Result>
-                <OutArgument x:TypeArguments="x:Boolean" />
-              </mva:VisualBasicValue.Result>
-            </mva:VisualBasicValue>
-          </FlowDecision.Condition>
+        <FlowDecision x:Name="__ReferenceID0" Condition="[BPanlegen.Equals(&quot;Ja&quot;)]" DisplayName="Flow Decision" sap:VirtualizedContainerService.HintSize="79.5,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -131,12 +124,23 @@
                   <av:Size x:Key="ShapeSize">200,68</av:Size>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="BusinessPartner-Daten eingeben" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="BusinessPartner-Daten eingeben" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:String" Name="bpReport" />
+                </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:String">[bpReport]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:String">/SHCM/RH_SYNC_BUPA_EMPL_SINGLE</InArgument>
+                  </Assign.Value>
+                </Assign>
               </Sequence>
             </FlowStep>
           </FlowDecision.True>
