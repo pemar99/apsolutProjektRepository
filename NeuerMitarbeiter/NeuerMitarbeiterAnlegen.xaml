@@ -342,7 +342,7 @@
             </ui:TypeInto.Target>
           </ui:TypeInto>
           <ui:Comment sap:VirtualizedContainerService.HintSize="713,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Email Adresse noch in Personalbogen einfügen&#xD;&#xA;" />
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Text="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Kommunikation'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_20">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Kommunikation'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_20" Text="[dtable.Rows(xx).Item(0).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e567ba8908f11df467bc52ae8a624eae" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Kommunikation anlegen' /&gt;&lt;sap id='usr/txtP0105-USRID' /&gt;">
                 <ui:Target.TimeoutMS>
