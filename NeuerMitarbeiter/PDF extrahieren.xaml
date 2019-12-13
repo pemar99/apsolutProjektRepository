@@ -104,7 +104,7 @@
                 <OutArgument x:TypeArguments="x:String">[item]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(item, “[^a-z ß A-Z 0-9 . ä ö ü]”, “”)]</InArgument>
+                <InArgument x:TypeArguments="x:String">[System.Text.RegularExpressions.Regex.Replace(item, “[^a-z ß A-Z 0-9 . Ä Ö Ü ä ö ü]”, “”)]</InArgument>
               </Assign.Value>
             </Assign>
             <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_5">
