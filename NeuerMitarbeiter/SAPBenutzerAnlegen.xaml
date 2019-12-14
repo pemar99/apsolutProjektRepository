@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="SAPBenutzerAnlegen" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,696" sap2010:WorkflowViewState.IdRef="SAPBenutzerAnlegen_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="SAPBenutzerAnlegen" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="654,696" sap2010:WorkflowViewState.IdRef="SAPBenutzerAnlegen_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -27,7 +27,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -46,20 +46,26 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="SAPBenutzerAnlegen" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="mitarbeiterDTeingelesen" />
+    </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,104.5</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Null />
+      <x:Reference>__ReferenceID2</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep>
+    <FlowStep x:Name="__ReferenceID1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,177</av:Point>
@@ -117,21 +123,20 @@
         </ui:TypeInto>
       </Sequence>
       <FlowStep.Next>
-        <FlowStep x:Name="__ReferenceID1">
+        <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,277</av:Point>
               <av:Size x:Key="ShapeSize">200,66</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,343 300,387</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="Adresse" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Adresse" sap:VirtualizedContainerService.HintSize="376,1104" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Nachname'" EmptyField="True" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" SendWindowMessages="False" SimulateType="False" Text="[dtable.rows(xx).item(xx).toString]">
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Nachname'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" SendWindowMessages="False" SimulateType="False" Text="[mitarbeiterDTeingelesen.Rows(0).Item(&quot;Name&quot;).ToString]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="94eb8845936c38084f1fb520da476096" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/txtSUID_ST_NODE_PERSON_NAME-NAME_LAST' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -143,7 +148,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Vorname'" EmptyField="True" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_25" SendWindowMessages="False" SimulateType="False" Text="[dtable.rows(xx).item(x).toString +&quot;[k(enter)]&quot;]">
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Vorname'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_25" SendWindowMessages="False" SimulateType="False" Text="[mitarbeiterDTeingelesen.Rows(0).Item(&quot;Vorname&quot;).ToString +&quot;[k(enter)]&quot;]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="de165fb9bd3a3b1451a0ea8a4cfd84bc" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/txtSUID_ST_NODE_PERSON_NAME-NAME_FIRST' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -155,140 +160,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <If Condition="[dtable.Rows(xx).Item(xx).ToString.Contains(&quot;deutsch&quot;)]" sap:VirtualizedContainerService.HintSize="713,284" sap2010:WorkflowViewState.IdRef="If_3">
-              <If.Then>
-                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Sprachenschlü...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_6" Item="Deutsch">
-                  <ui:SelectItem.Items>
-                    <scg:List x:TypeArguments="x:String" Capacity="64">
-                      <x:String>Afrikaans</x:String>
-                      <x:String>Arabisch</x:String>
-                      <x:String>Bulgarisch</x:String>
-                      <x:String>Chinesisch</x:String>
-                      <x:String>Chinesisch trad.</x:String>
-                      <x:String>Dänisch</x:String>
-                      <x:String>Deutsch</x:String>
-                      <x:String>Englisch</x:String>
-                      <x:String>Estnisch</x:String>
-                      <x:String>Finnisch</x:String>
-                      <x:String>Französisch</x:String>
-                      <x:String>Griechisch</x:String>
-                      <x:String>Hebräisch</x:String>
-                      <x:String>Hindi</x:String>
-                      <x:String>Indonesisch</x:String>
-                      <x:String>Isländisch</x:String>
-                      <x:String>Italienisch</x:String>
-                      <x:String>Japanisch</x:String>
-                      <x:String>Kasachisch</x:String>
-                      <x:String>Katalanisch</x:String>
-                      <x:String>Koreanisch</x:String>
-                      <x:String>Kroatisch</x:String>
-                      <x:String>Kundenreserve</x:String>
-                      <x:String>Lettisch</x:String>
-                      <x:String>Litauisch</x:String>
-                      <x:String>Malaysisch</x:String>
-                      <x:String>Niederländisch</x:String>
-                      <x:String>Norwegisch</x:String>
-                      <x:String>Polnisch</x:String>
-                      <x:String>Portugiesisch</x:String>
-                      <x:String>Rumänisch</x:String>
-                      <x:String>Russisch</x:String>
-                      <x:String>Schwedisch</x:String>
-                      <x:String>Serbisch</x:String>
-                      <x:String>Serbisch(latein)</x:String>
-                      <x:String>Slowakisch</x:String>
-                      <x:String>Slowenisch</x:String>
-                      <x:String>Spanisch</x:String>
-                      <x:String>Thailändisch</x:String>
-                      <x:String>Tschechisch</x:String>
-                      <x:String>Türkisch</x:String>
-                      <x:String>Ukrainisch</x:String>
-                      <x:String>Ungarisch</x:String>
-                      <x:String>Vietnamesisch</x:String>
-                      <x:String xml:space="preserve"> </x:String>
-                    </scg:List>
-                  </ui:SelectItem.Items>
-                  <ui:SelectItem.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="dffc95561f3b4a21539e37b3bf71dd52" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/cmbSUID_ST_NODE_PERSON_NAME-LANGU' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:SelectItem.Target>
-                </ui:SelectItem>
-              </If.Then>
-            </If>
-            <If Condition="[dtable.Rows(xx).Item(xx).ToString.Contains(&quot;Herr&quot;)]" sap:VirtualizedContainerService.HintSize="713,284" sap2010:WorkflowViewState.IdRef="If_4">
-              <If.Then>
-                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Anredetext'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_7" Item="Herr">
-                  <ui:SelectItem.Items>
-                    <scg:List x:TypeArguments="x:String" Capacity="4">
-                      <x:String>Frau</x:String>
-                      <x:String>Herr</x:String>
-                      <x:String xml:space="preserve"> </x:String>
-                    </scg:List>
-                  </ui:SelectItem.Items>
-                  <ui:SelectItem.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3356af06d314ca3db8d995334d770898" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/cmbSUID_ST_NODE_PERSON_NAME_EXT-TITLE_MEDI' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:SelectItem.Target>
-                </ui:SelectItem>
-              </If.Then>
-              <If.Else>
-                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Anredetext'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_8" Item="Frau">
-                  <ui:SelectItem.Items>
-                    <scg:List x:TypeArguments="x:String" Capacity="4">
-                      <x:String>Frau</x:String>
-                      <x:String>Herr</x:String>
-                      <x:String xml:space="preserve"> </x:String>
-                    </scg:List>
-                  </ui:SelectItem.Items>
-                  <ui:SelectItem.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3356af06d314ca3db8d995334d770898" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/cmbSUID_ST_NODE_PERSON_NAME_EXT-TITLE_MEDI' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:SelectItem.Target>
-                </ui:SelectItem>
-              </If.Else>
-            </If>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Erste'" EmptyField="True" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_26" SendWindowMessages="False" SimulateType="False" Text="0123456789">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f84edf4b268d33165c2e7379799af689" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/txtSUID_ST_NODE_COMM_DATA-TEL_NUMBER' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Erste'" EmptyField="True" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_27" SendWindowMessages="False" SimulateType="False" Text="987654321">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cac4cb9ea55d0049830d126835f06711" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/txtSUID_ST_NODE_COMM_DATA-MOB_NUMBER' /&gt;">
-                  <ui:Target.TimeoutMS>
-                    <InArgument x:TypeArguments="x:Int32" />
-                  </ui:Target.TimeoutMS>
-                  <ui:Target.WaitForReady>
-                    <InArgument x:TypeArguments="ui:WaitForReady" />
-                  </ui:Target.WaitForReady>
-                </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  E-Mail-Adres...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_28" SendWindowMessages="False" SimulateType="False" Text="max.mustermann@ap-solut.com">
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  E-Mail-Adres...'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_28" SendWindowMessages="False" SimulateType="False" Text="[mitarbeiterDTeingelesen.Rows(0).Item(&quot;Email-Adresse&quot;).ToString]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5558543a4854aeff4ac1a7ad8f124858" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/txtSUID_ST_NODE_COMM_DATA-SMTP_ADDR' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -300,136 +172,313 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-          </Sequence>
-          <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID0">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="535,373" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[dtable.Rows(xx).Item(xx).ToString.Contains(&quot;deutsch&quot;)]" sap:VirtualizedContainerService.HintSize="493,281" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Sprachenschlü...'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_6" Item="Deutsch">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="64">
+                            <x:String>Afrikaans</x:String>
+                            <x:String>Arabisch</x:String>
+                            <x:String>Bulgarisch</x:String>
+                            <x:String>Chinesisch</x:String>
+                            <x:String>Chinesisch trad.</x:String>
+                            <x:String>Dänisch</x:String>
+                            <x:String>Deutsch</x:String>
+                            <x:String>Englisch</x:String>
+                            <x:String>Estnisch</x:String>
+                            <x:String>Finnisch</x:String>
+                            <x:String>Französisch</x:String>
+                            <x:String>Griechisch</x:String>
+                            <x:String>Hebräisch</x:String>
+                            <x:String>Hindi</x:String>
+                            <x:String>Indonesisch</x:String>
+                            <x:String>Isländisch</x:String>
+                            <x:String>Italienisch</x:String>
+                            <x:String>Japanisch</x:String>
+                            <x:String>Kasachisch</x:String>
+                            <x:String>Katalanisch</x:String>
+                            <x:String>Koreanisch</x:String>
+                            <x:String>Kroatisch</x:String>
+                            <x:String>Kundenreserve</x:String>
+                            <x:String>Lettisch</x:String>
+                            <x:String>Litauisch</x:String>
+                            <x:String>Malaysisch</x:String>
+                            <x:String>Niederländisch</x:String>
+                            <x:String>Norwegisch</x:String>
+                            <x:String>Polnisch</x:String>
+                            <x:String>Portugiesisch</x:String>
+                            <x:String>Rumänisch</x:String>
+                            <x:String>Russisch</x:String>
+                            <x:String>Schwedisch</x:String>
+                            <x:String>Serbisch</x:String>
+                            <x:String>Serbisch(latein)</x:String>
+                            <x:String>Slowakisch</x:String>
+                            <x:String>Slowenisch</x:String>
+                            <x:String>Spanisch</x:String>
+                            <x:String>Thailändisch</x:String>
+                            <x:String>Tschechisch</x:String>
+                            <x:String>Türkisch</x:String>
+                            <x:String>Ukrainisch</x:String>
+                            <x:String>Ungarisch</x:String>
+                            <x:String>Vietnamesisch</x:String>
+                            <x:String xml:space="preserve"> </x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="dffc95561f3b4a21539e37b3bf71dd52" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/cmbSUID_ST_NODE_PERSON_NAME-LANGU' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                    </If.Then>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">200,387</av:Point>
-                  <av:Size x:Key="ShapeSize">200,66</av:Size>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Sequence DisplayName="Logondaten" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-                <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab  Logondaten'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                  <ui:Click.CursorPosition>
-                    <ui:CursorPosition OffsetX="46" OffsetY="13" Position="TopLeft" />
-                  </ui:Click.CursorPosition>
-                  <ui:Click.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7b0a72e19909b0b0d696285b5751159c" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:Click.Target>
-                </ui:Click>
-                <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Benutzertyp'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_9" Item="Dialog">
-                  <ui:SelectItem.Items>
-                    <scg:List x:TypeArguments="x:String" Capacity="8">
-                      <x:String>Dialog</x:String>
-                      <x:String>System</x:String>
-                      <x:String>Kommunikation</x:String>
-                      <x:String>Referenz (Anmeldung nicht möglich)</x:String>
-                      <x:String>Service</x:String>
-                    </scg:List>
-                  </ui:SelectItem.Items>
-                  <ui:SelectItem.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="436ab2693c2acff19f7d461a7382be18" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/cmbSUID_ST_NODE_LOGONDATA-USTYP' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:SelectItem.Target>
-                </ui:SelectItem>
-                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'PasswordField Neues'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_29" SendWindowMessages="False" SimulateType="False" Text="initial">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ac0cf99d9dc4030de855aa6936c8fd59" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/pwdSUID_ST_NODE_PASSWORD_EXT-PASSWORD' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'PasswordField  Kennwort...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_30" SendWindowMessages="False" SimulateType="False" Text="initial">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="03ce2bd8bded0e4c5deca9fd8c116aed" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/pwdSUID_ST_NODE_PASSWORD_EXT-PASSWORD2' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Benutzer'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_31" SendWindowMessages="False" SimulateType="False" Text="[dtable.rows(xx).item(xx).toString]">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c3eb9c7b23a3aad3a1f397b0aca5e7d6" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/ctxtSUID_ST_NODE_LOGONDATA-GLTGV' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Benutzer'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_32" SendWindowMessages="False" SimulateType="False" Text="31.12.2099">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="81fbe155d47700553ff4752813a6d3ac" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/ctxtSUID_ST_NODE_LOGONDATA-GLTGB' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Account-Id'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_33" SendWindowMessages="False" SimulateType="False" Text="2001">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="6edc62f673ebd6f8a143cdaf586fde5b" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/txtSUID_ST_NODE_LOGONDATA-ACCNT' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-                <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Kostenstelle'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_34" SendWindowMessages="False" SimulateType="False" Text="4001">
-                  <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0562e791f977bee7893d1b31cf7d6519" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/txtSUID_ST_NODE_LOGONDATA-KOSTL' /&gt;">
-                      <ui:Target.TimeoutMS>
-                        <InArgument x:TypeArguments="x:Int32" />
-                      </ui:Target.TimeoutMS>
-                      <ui:Target.WaitForReady>
-                        <InArgument x:TypeArguments="ui:WaitForReady" />
-                      </ui:Target.WaitForReady>
-                    </ui:Target>
-                  </ui:TypeInto.Target>
-                </ui:TypeInto>
-              </Sequence>
-            </FlowStep>
-          </FlowStep.Next>
+            </ui:CommentOut>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="755,373" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[dtable.Rows(xx).Item(xx).ToString.Contains(&quot;Herr&quot;)]" sap:VirtualizedContainerService.HintSize="713,281" sap2010:WorkflowViewState.IdRef="If_4">
+                    <If.Then>
+                      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Anredetext'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_7" Item="Herr">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="4">
+                            <x:String>Frau</x:String>
+                            <x:String>Herr</x:String>
+                            <x:String xml:space="preserve"> </x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3356af06d314ca3db8d995334d770898" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/cmbSUID_ST_NODE_PERSON_NAME_EXT-TITLE_MEDI' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                    </If.Then>
+                    <If.Else>
+                      <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Anredetext'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_8" Item="Frau">
+                        <ui:SelectItem.Items>
+                          <scg:List x:TypeArguments="x:String" Capacity="4">
+                            <x:String>Frau</x:String>
+                            <x:String>Herr</x:String>
+                            <x:String xml:space="preserve"> </x:String>
+                          </scg:List>
+                        </ui:SelectItem.Items>
+                        <ui:SelectItem.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3356af06d314ca3db8d995334d770898" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/cmbSUID_ST_NODE_PERSON_NAME_EXT-TITLE_MEDI' /&gt;">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                            <ui:Target.WaitForReady>
+                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                            </ui:Target.WaitForReady>
+                          </ui:Target>
+                        </ui:SelectItem.Target>
+                      </ui:SelectItem>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Erste'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_26" SendWindowMessages="False" SimulateType="False" Text="0123456789">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f84edf4b268d33165c2e7379799af689" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/txtSUID_ST_NODE_COMM_DATA-TEL_NUMBER' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Erste'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_27" SendWindowMessages="False" SimulateType="False" Text="987654321">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="cac4cb9ea55d0049830d126835f06711" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpADDR/ssubMAINAREA:SAPLSUID_MAINTENANCE:1900/txtSUID_ST_NODE_COMM_DATA-MOB_NUMBER' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+          </Sequence>
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
+    <FlowStep>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,387</av:Point>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence DisplayName="Logondaten" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Tab  Logondaten'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_3" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
+          <ui:Click.CursorPosition>
+            <ui:CursorPosition OffsetX="46" OffsetY="13" Position="TopLeft" />
+          </ui:Click.CursorPosition>
+          <ui:Click.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7b0a72e19909b0b0d696285b5751159c" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:Click.Target>
+        </ui:Click>
+        <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Benutzertyp'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_9" Item="Dialog">
+          <ui:SelectItem.Items>
+            <scg:List x:TypeArguments="x:String" Capacity="8">
+              <x:String>Dialog</x:String>
+              <x:String>System</x:String>
+              <x:String>Kommunikation</x:String>
+              <x:String>Referenz (Anmeldung nicht möglich)</x:String>
+              <x:String>Service</x:String>
+            </scg:List>
+          </ui:SelectItem.Items>
+          <ui:SelectItem.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="436ab2693c2acff19f7d461a7382be18" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/cmbSUID_ST_NODE_LOGONDATA-USTYP' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:SelectItem.Target>
+        </ui:SelectItem>
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'PasswordField Neues'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_29" SendWindowMessages="False" SimulateType="False" Text="initial">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ac0cf99d9dc4030de855aa6936c8fd59" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/pwdSUID_ST_NODE_PASSWORD_EXT-PASSWORD' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'PasswordField  Kennwort...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_30" SendWindowMessages="False" SimulateType="False" Text="initial">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="03ce2bd8bded0e4c5deca9fd8c116aed" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/pwdSUID_ST_NODE_PASSWORD_EXT-PASSWORD2' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Benutzer'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_31" SendWindowMessages="False" SimulateType="False" Text="[dtable.rows(xx).item(xx).toString]">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c3eb9c7b23a3aad3a1f397b0aca5e7d6" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/ctxtSUID_ST_NODE_LOGONDATA-GLTGV' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Benutzer'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_32" SendWindowMessages="False" SimulateType="False" Text="31.12.2099">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="81fbe155d47700553ff4752813a6d3ac" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/ctxtSUID_ST_NODE_LOGONDATA-GLTGB' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Account-Id'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_33" SendWindowMessages="False" SimulateType="False" Text="2001">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="6edc62f673ebd6f8a143cdaf586fde5b" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/txtSUID_ST_NODE_LOGONDATA-ACCNT' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Kostenstelle'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_34" SendWindowMessages="False" SimulateType="False" Text="4001">
+          <ui:TypeInto.Target>
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0562e791f977bee7893d1b31cf7d6519" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzer pflegen' /&gt;&lt;sap id='usr/tabsTABSTRIP1/tabpLOGO/ssubMAINAREA:SAPLSUID_MAINTENANCE:1101/txtSUID_ST_NODE_LOGONDATA-KOSTL' /&gt;">
+              <ui:Target.TimeoutMS>
+                <InArgument x:TypeArguments="x:Int32" />
+              </ui:Target.TimeoutMS>
+              <ui:Target.WaitForReady>
+                <InArgument x:TypeArguments="ui:WaitForReady" />
+              </ui:Target.WaitForReady>
+            </ui:Target>
+          </ui:TypeInto.Target>
+        </ui:TypeInto>
+      </Sequence>
+    </FlowStep>
     <x:Reference>__ReferenceID0</x:Reference>
-    <x:Reference>__ReferenceID1</x:Reference>
+    <FlowStep x:Name="__ReferenceID2">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <av:Point x:Key="ShapeLocation">200,104.5</av:Point>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,155.5 300,177</av:PointCollection>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[mitarbeiterDTeingelesen]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Tabelle1" WorkbookPath="Ressourcen\mitarbeiterExcel.xlsx" />
+      <FlowStep.Next>
+        <x:Reference>__ReferenceID1</x:Reference>
+      </FlowStep.Next>
+    </FlowStep>
   </Flowchart>
 </Activity>
