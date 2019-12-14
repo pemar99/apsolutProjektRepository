@@ -72,7 +72,7 @@
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="PDFDataExtraction" sap:VirtualizedContainerService.HintSize="622,4887" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence DisplayName="PDFDataExtraction" sap:VirtualizedContainerService.HintSize="572,4781" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:String[]" Name="PdfFiles" />
           <Variable x:TypeArguments="x:String" Name="PdfPath" />
@@ -84,7 +84,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="580,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign sap:VirtualizedContainerService.HintSize="530,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[PdfPath]</OutArgument>
           </Assign.To>
@@ -92,7 +92,7 @@
             <InArgument x:TypeArguments="x:String">Ressourcen</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="580,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign sap:VirtualizedContainerService.HintSize="530,60" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
             <OutArgument x:TypeArguments="s:String[]">[PdfFiles]</OutArgument>
           </Assign.To>
@@ -100,7 +100,7 @@
             <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(PdfPath,"*.pdf")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="580,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+        <Assign sap:VirtualizedContainerService.HintSize="530,60" sap2010:WorkflowViewState.IdRef="Assign_3">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[ProcessedPath]</OutArgument>
           </Assign.To>
@@ -108,8 +108,8 @@
             <InArgument x:TypeArguments="x:String">Ressourcen\eingefuegterMitarbeiter</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:BuildDataTable DataTable="[mitarbeiterDT]" DisplayName="Build mitarbeiterDT" sap:VirtualizedContainerService.HintSize="580,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Anrede&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Vorname&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Geburtsdatum&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Strasse&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Hausnummer&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Postleitzahl&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Wohnort&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Email-Adresse&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Versicherungsnummer&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bankname&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;BIC&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;IBAN&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Bankleitzahl&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Eintrittsdatum&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Berufsbezeichnung&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Lohnsteuerklasse&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;SAP_x0020_Benutzer&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Business_x0020_Partner&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Equipment&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="580,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:BuildDataTable DataTable="[mitarbeiterDT]" DisplayName="Build mitarbeiterDT" sap:VirtualizedContainerService.HintSize="530,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Anrede&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Name&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Vorname&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Geburtsdatum&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Strasse&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Hausnummer&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Postleitzahl&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Wohnort&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Email-Adresse&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Versicherungsnummer&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Bankname&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;BIC&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;IBAN&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Bankleitzahl&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Eintrittsdatum&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Berufsbezeichnung&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Lohnsteuerklasse&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SAP_x0020_Nutzer&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Business_x0020_Partner&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Equipment&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="530,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
           <ui:CommentOut.Body>
             <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_5">
               <sap:WorkflowViewStateService.ViewState>
@@ -127,32 +127,32 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:CommentOut>
-        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="580,4305" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PdfFiles]">
+        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="530,4199" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[PdfFiles]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="544,4171" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="494,4065" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[file.ToString]" sap:VirtualizedContainerService.HintSize="502,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
-                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'AcroRd32.exe Personalbo...'" sap:VirtualizedContainerService.HintSize="502,3952" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="68d7be008675f65aadc59a6f0f8f1a37" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*Personalbogen*' /&gt;">
+                <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[file.ToString]" sap:VirtualizedContainerService.HintSize="452,87" sap2010:WorkflowViewState.IdRef="StartProcess_1" />
+                <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'AcroRd32.exe Personalbo...'" sap:VirtualizedContainerService.HintSize="452,3846" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="68d7be008675f65aadc59a6f0f8f1a37" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='*Personalbogen*' /&gt;">
                   <ui:WindowScope.Body>
                     <ActivityAction x:TypeArguments="x:Object">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="468,3806" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                      <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="418,3700" sap2010:WorkflowViewState.IdRef="Sequence_1">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="426,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
                           <ui:CommentOut.Body>
                             <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="376,208" sap2010:WorkflowViewState.IdRef="Sequence_6">
                               <sap:WorkflowViewStateService.ViewState>
@@ -181,7 +181,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:CommentOut>
-                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="426,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="376,51" sap2010:WorkflowViewState.IdRef="CommentOut_3">
                           <ui:CommentOut.Body>
                             <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="376,208" sap2010:WorkflowViewState.IdRef="Sequence_7">
                               <sap:WorkflowViewStateService.ViewState>
@@ -210,7 +210,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </ui:CommentOut>
-                        <Sequence DisplayName="ExtractData" sap:VirtualizedContainerService.HintSize="426,3532" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence DisplayName="ExtractData" sap:VirtualizedContainerService.HintSize="376,3426" sap2010:WorkflowViewState.IdRef="Sequence_4">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="anrede" />
                             <Variable x:TypeArguments="x:String" Name="name" />
@@ -238,7 +238,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Herr'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Herr'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_1" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c4c7fa1e3a6e3bc01c84482645df3da6" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='1' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -253,7 +253,7 @@
                               <OutArgument x:TypeArguments="x:String">[anrede]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Mustermann'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_2" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Mustermann'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_2" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c1e0a17b7a12802e94d486fe01bfd889" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='2' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -268,7 +268,7 @@
                               <OutArgument x:TypeArguments="x:String">[name]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Max'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_3" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Max'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_3" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="13ca2bc265c5c75ea29039265c9072c4" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='3' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -283,7 +283,7 @@
                               <OutArgument x:TypeArguments="x:String">[vorname]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  12.12.1990'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_4" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  12.12.1990'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_4" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="dec7d8892371eac3993cb9b772c4df8a" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='4' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -298,7 +298,7 @@
                               <OutArgument x:TypeArguments="x:String">[geburtsdatum]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Musterstrasse'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_5" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Musterstrasse'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_5" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2e489e460badcc62a809d853203e9a2c" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='5' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -313,7 +313,7 @@
                               <OutArgument x:TypeArguments="x:String">[strasse]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  2'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_6" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  2'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_6" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="9a6b75ceb7ebc7e3d4d6f51288ecdc19" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='6' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -328,7 +328,7 @@
                               <OutArgument x:TypeArguments="x:String">[hausnummer]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  33566'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_7" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  33566'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_7" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="795b24c16c596be7e513339ae751b422" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='7' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -343,7 +343,7 @@
                               <OutArgument x:TypeArguments="x:String">[plz]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Musterstadt'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_8" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Musterstadt'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_8" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1f411da6a48dff2b4a01b7581aff253b" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='8' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -358,7 +358,7 @@
                               <OutArgument x:TypeArguments="x:String">[wohnort]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Max.Mustermann@ap...'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_9" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Max.Mustermann@ap...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_9" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="de71060a18f1bd15637f8838f566950f" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='9' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -373,7 +373,7 @@
                               <OutArgument x:TypeArguments="x:String">[email]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  38921083'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_10" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  38921083'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_10" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="53a908f832eef068ebfccf3af7d65a48" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='10' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -388,7 +388,7 @@
                               <OutArgument x:TypeArguments="x:String">[versicherungsnr]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text Volksbank'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_11" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text Volksbank'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_11" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2cb321eaca411c08c406b8b40f1d0332" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='11' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -403,7 +403,7 @@
                               <OutArgument x:TypeArguments="x:String">[bankname]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  GENODEM1LUB'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_12" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  GENODEM1LUB'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_12" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f36068819c41e10724fcf6bd7865a42d" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='12' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -418,7 +418,7 @@
                               <OutArgument x:TypeArguments="x:String">[bic]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  431431'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_13" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  431431'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_13" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="04b1eb8d76cf60725526d7a7b7adec52" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='13' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -433,7 +433,7 @@
                               <OutArgument x:TypeArguments="x:String">[iban]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  43143143'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_14" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  43143143'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_14" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e62bc21be20ef92eee195efe912e2e5e" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='14' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -448,7 +448,7 @@
                               <OutArgument x:TypeArguments="x:String">[blz]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  12.12.2012'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_15" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  12.12.2012'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_15" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c4b991c2aebc560d5b536188f27eac34" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='15' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -463,7 +463,7 @@
                               <OutArgument x:TypeArguments="x:String">[eintrittsdatum]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Reinigungskraft'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_16" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Reinigungskraft'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_16" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c86d55a9ba47acebaa86fb507cee76ff" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='16' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -478,7 +478,7 @@
                               <OutArgument x:TypeArguments="x:String">[berufsbezeichnung]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  1'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_17" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  1'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_17" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2340354c9904b91841d8dc97d31cc0d2" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='17' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -493,7 +493,7 @@
                               <OutArgument x:TypeArguments="x:String">[lohnsteuerklasse]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Ja'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_18" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Ja'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_18" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="62fc0f56a2f7d3870b15a2c65d9cb4f5" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='18' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -508,7 +508,7 @@
                               <OutArgument x:TypeArguments="x:String">[sapbenutzerFrage]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  Nein'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_19" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  Nein'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_19" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="bbef89c58358fd959a96f3dcf2626fb5" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='19' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -523,7 +523,7 @@
                               <OutArgument x:TypeArguments="x:String">[businesspartnerFrage]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:GetFullText DisplayName="Get Full Text 'text  MacBook'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="GetFullText_20" IgnoreHidden="True">
+                          <ui:GetFullText DisplayName="Get Full Text 'text  MacBook'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="GetFullText_20" IgnoreHidden="True">
                             <ui:GetFullText.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e5759bef87a0e556cb4b394629d82e17" Selector="&lt;wnd aaname='Dokumentbereich' cls='AVL_AVView' title='AVScrolledPageView' /&gt;&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='20' role='row' /&gt;&lt;ctrl role='cell' idx='2' /&gt;">
                                 <ui:Target.TimeoutMS>
@@ -538,7 +538,7 @@
                               <OutArgument x:TypeArguments="x:String">[equipment]</OutArgument>
                             </ui:GetFullText.Text>
                           </ui:GetFullText>
-                          <ui:CloseApplication DisplayName="Close Application 'AcroRd32.exe Personalbo...'" sap:VirtualizedContainerService.HintSize="384,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+                          <ui:CloseApplication DisplayName="Close Application 'AcroRd32.exe Personalbo...'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
                             <ui:CloseApplication.Target>
                               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" InformativeScreenshot="f30071935df400f1ade95441424064a8">
                                 <ui:Target.TimeoutMS>
@@ -550,9 +550,26 @@
                               </ui:Target>
                             </ui:CloseApplication.Target>
                           </ui:CloseApplication>
-                          <ui:MoveFile ContinueOnError="{x:Null}" Destination="[ProcessedPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[file.ToString]" />
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{anrede,name,vorname,geburtsdatum,strasse,hausnummer,plz,wohnort,email,versicherungsnr,bankname,bic,iban,blz,eintrittsdatum,berufsbezeichnung,lohnsteuerklasse,sapbenutzerFrage,businesspartnerFrage,equipment}]" DataTable="[mitarbeiterDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="384,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[mitarbeiterDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="384,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Tabelle1" WorkbookPath="Ressourcen\mitarbeiterExcel.xlsx" />
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="426,249" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:MoveFile ContinueOnError="{x:Null}" Destination="[ProcessedPath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[file.ToString]" />
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:CommentOut>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{anrede,name,vorname,geburtsdatum,strasse,hausnummer,plz,wohnort,email,versicherungsnr,bankname,bic,iban,blz,eintrittsdatum,berufsbezeichnung,lohnsteuerklasse,sapbenutzerFrage,businesspartnerFrage,equipment}]" DataTable="[mitarbeiterDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[mitarbeiterDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Tabelle1" WorkbookPath="Ressourcen\mitarbeiterExcel.xlsx" />
                         </Sequence>
                       </Sequence>
                     </ActivityAction>
