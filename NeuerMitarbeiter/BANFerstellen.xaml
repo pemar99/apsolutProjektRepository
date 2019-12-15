@@ -61,12 +61,14 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="mitarbeiterDT" />
       <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="mitarbeiterCounter" />
+      <Variable x:TypeArguments="x:String" Name="mitarbeiterName" />
+      <Variable x:TypeArguments="x:String" Name="mitarbeiterStellenname" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,97</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -77,11 +79,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,217</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,283 300,336.333333333333</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,286.333333333333 300,336.333333333333</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Transaktion öffnen" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Transaktion öffnen" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -170,26 +172,30 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,97</av:Point>
-          <av:Size x:Key="ShapeSize">200,66</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,163 300,217</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,166.333333333333 300,217</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="sd:DataTable" Name="datatable" />
-        </Sequence.Variables>
+      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[datatable]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\Jan\Dropbox\2019 - Projekt - apsolut GmbH\- Gemeinsamer Ordner -\Untitled.csv" sap:VirtualizedContainerService.HintSize="334,156.666666666667" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
-        <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[Equipment]</OutArgument>
+            <OutArgument x:TypeArguments="x:String">[mitarbeiterName]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[datatable.Rows(31).item(0).ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String">[mitarbeiterDT.ToString(mitarbeiterDT.Rows(mitarbeiterCounter).Item("Vorname")) + mitarbeiterDT.ToString(mitarbeiterDT.Rows(mitarbeiterCounter).Item("Name"))]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[mitarbeiterStellenname]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[mitarbeiterDT.ToString(mitarbeiterDT.Rows(mitarbeiterCounter).Item("Berufsbezeichnung"))]</InArgument>
           </Assign.Value>
         </Assign>
       </Sequence>
