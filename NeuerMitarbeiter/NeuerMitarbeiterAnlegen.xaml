@@ -66,7 +66,7 @@
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="797,5222" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="797,5422" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtable" />
           <Variable x:TypeArguments="ui:GenericValue" Name="ma" />
@@ -77,6 +77,15 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
+        <Assign sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <Assign.To>
+            <OutArgument x:TypeArguments="sd:DataTable">[dtable]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="sd:DataTable">[d]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="755,60" sap2010:WorkflowViewState.IdRef="Assign_2" />
         <ui:ReadCsvFile Encoding="{x:Null}" DataTable="[dtable]" Delimitator="Comma" DisplayName="Read CSV" FilePath="C:\Users\Jan\Dropbox\2019 - Projekt - apsolut GmbH\- Gemeinsamer Ordner -\Untitled.csv" sap:VirtualizedContainerService.HintSize="755,152" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" IncludeColumnNames="False" />
         <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'OkCodeField  okcd'" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" Text="pa30[k(Enter)]">
           <ui:TypeInto.Target>
