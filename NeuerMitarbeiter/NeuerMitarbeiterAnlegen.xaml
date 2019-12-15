@@ -141,7 +141,7 @@
               <av:Size x:Key="ShapeSize">200,68</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="MA anlegen" sap:VirtualizedContainerService.HintSize="797,4574" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="MA anlegen" sap:VirtualizedContainerService.HintSize="797,4748" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,7 +220,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <Sequence sap:VirtualizedContainerService.HintSize="755,3342" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <Sequence sap:VirtualizedContainerService.HintSize="755,3516" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -439,6 +439,18 @@
               </ui:TypeInto>
               <ui:Comment sap:VirtualizedContainerService.HintSize="713,95" sap2010:WorkflowViewState.IdRef="Comment_10" Text="// Kann im Moment noch keinen Zahlweg auswählen und komme deshalb nicht weiter. Sollte bis dahin aber laufen." />
               <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'saplogon.exe Personalst...'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_44" Text="%[d(ctrl)] s [u(ctrl)]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c29c200b5acd21334ca008302f793714" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Personalstammdaten pflegen' /&gt;">
+                    <ui:Target.TimeoutMS>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:Target.TimeoutMS>
+                    <ui:Target.WaitForReady>
+                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                    </ui:Target.WaitForReady>
+                  </ui:Target>
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'saplogon.exe Personalst...'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_45" Text="%[k(f3)]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="c29c200b5acd21334ca008302f793714" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Personalstammdaten pflegen' /&gt;">
                     <ui:Target.TimeoutMS>
