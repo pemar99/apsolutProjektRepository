@@ -59,7 +59,7 @@
   <Flowchart DisplayName="NeuerMitarbeiterAnlegen" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="maCounter" />
-      <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="maDT" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="dtable" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -81,7 +81,6 @@
       </sap:WorkflowViewStateService.ViewState>
       <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="797,5030" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
-          <Variable x:TypeArguments="sd:DataTable" Name="dtable" />
           <Variable x:TypeArguments="ui:GenericValue" Name="ma" />
           <Variable x:TypeArguments="ui:GenericValue" Name="persNr" />
         </Sequence.Variables>
