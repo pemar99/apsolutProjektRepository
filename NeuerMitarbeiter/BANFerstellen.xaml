@@ -64,6 +64,7 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:String" Name="mitarbeiterName" />
       <Variable x:TypeArguments="s:String[]" Name="benoetigtesEquipment" />
+      <Variable x:TypeArguments="x:String" Name="beschreibungEquipment" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -90,9 +91,10 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.666666666667,304.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+        <ui:Comment sap:VirtualizedContainerService.HintSize="436.666666666667,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Transaktion wird geöffnet." />
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436.666666666667,304.666666666667" sap2010:WorkflowViewState.IdRef="CommentOut_3">
           <ui:CommentOut.Body>
-            <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_11">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -113,7 +115,6 @@
             </Sequence>
           </ui:CommentOut.Body>
         </ui:CommentOut>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="436.666666666667,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Transaktion wird geöffnet." />
       </Sequence>
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID1">
@@ -123,58 +124,110 @@
               <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="BANF anlegen" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="BANF anlegen" sap:VirtualizedContainerService.HintSize="454.666666666667,1403.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:Boolean" Name="headIsOpen" />
+              <Variable x:TypeArguments="x:Int32" Default="0" Name="benoetigtesEquipmentCounter" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:Comment sap:VirtualizedContainerService.HintSize="572,132.666666666667" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Nachdem die Transaktion geöffnet wurde, wird hier nun die Maske mit den Relevanten Daten ausgefüllt. Zuerst wird geschaut ob Die DropDownButton aktiviert sind, dann wird Material eingetragen, dann wird banf erstellt" />
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="572,573.333333333333" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="535.333333333333,494.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:UiElementExists DisplayName="Element Exists 'Textedit  shell'" Exists="[headIsOpen]" sap:VirtualizedContainerService.HintSize="493.333333333333,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
-                    <ui:UiElementExists.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="3c50a7fdbaad03282ee66b49272a7a44" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bestellanforderung anlegen' /&gt;&lt;sap id='usr/subSUB0:SAPLMEGUI:0016/subSUB1:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEVIEWS:2000/txtDYN_2000-LABEL' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:UiElementExists.Target>
-                  </ui:UiElementExists>
-                  <If Condition="[headIsOpen = False]" sap:VirtualizedContainerService.HintSize="493.333333333333,256.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
-                    <If.Then>
-                      <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button Kopf'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="False">
-                        <ui:Click.CursorPosition>
-                          <ui:CursorPosition OffsetX="19" OffsetY="13" Position="TopLeft" />
-                        </ui:Click.CursorPosition>
-                        <ui:Click.Target>
-                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="42944acbac6261b65ad196e575aea14b" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bestellanforderung anlegen' /&gt;&lt;sap id='usr/subSUB0:SAPLMEGUI:0016/subSUB1:SAPLMEVIEWS:1100/subSUB1:SAPLMEVIEWS:4000/btnDYN_4000-BUTTON' /&gt;">
-                            <ui:Target.TimeoutMS>
-                              <InArgument x:TypeArguments="x:Int32" />
-                            </ui:Target.TimeoutMS>
-                            <ui:Target.WaitForReady>
-                              <InArgument x:TypeArguments="ui:WaitForReady" />
-                            </ui:Target.WaitForReady>
-                          </ui:Target>
-                        </ui:Click.Target>
-                      </ui:Click>
-                    </If.Then>
-                  </If>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
+            <ui:Comment sap:VirtualizedContainerService.HintSize="412.666666666667,94" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Transaktion wurde geöffnet. Es wird geschaut, ob die Menüs schon aktiviert sind. Dann werden Daten eingetragen" />
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'UserArea  usr'" sap:VirtualizedContainerService.HintSize="412.666666666667,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f2" KeyModifiers="Ctrl" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="169f2aed5e4b80474a790101198ac017" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bestellanforderung anlegen' /&gt;&lt;sap id='usr' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey 'UserArea  usr'" sap:VirtualizedContainerService.HintSize="412.666666666667,155.333333333333" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="f3" KeyModifiers="Ctrl" SpecialKey="True">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e5b3edffe0f39f59244d3e6a381301b0" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bestellanforderung anlegen' /&gt;&lt;sap id='usr' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'Textedit  shell'" sap:VirtualizedContainerService.HintSize="412.666666666667,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" Text="[&quot;Für den neuen Mitarbeiter &quot; + mitarbeiterName + &quot; wird folgendes Equipment benötigt: &quot;+ beschreibungEquipment]">
+              <ui:TypeInto.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="2cb9a6e37f0091d25b7f39d4535af636" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bestellanforderung anlegen' /&gt;&lt;sap id='usr/subSUB0:SAPLMEGUI:0013/subSUB1:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEGUI:3102/tabsREQ_HEADER_DETAIL/tabpTABREQHDT1/ssubTABSTRIPCONTROL3SUB:SAPLMEGUI:1230/subTEXTS:SAPLMMTE:0100/subEDITOR:SAPLMMTE:0101/cntlTEXT_EDITOR_0101/shellcont/shell' /&gt;">
+                  <ui:Target.TimeoutMS>
+                    <InArgument x:TypeArguments="x:Int32" />
+                  </ui:Target.TimeoutMS>
+                  <ui:Target.WaitForReady>
+                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                  </ui:Target.WaitForReady>
+                </ui:Target>
+              </ui:TypeInto.Target>
+            </ui:TypeInto>
+            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412.666666666667,612.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[benoetigtesEquipment]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="376,474" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'GridViewCell  shell'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT">
+                      <ui:Click.CursorPosition>
+                        <ui:CursorPosition Position="Center">
+                          <ui:CursorPosition.OffsetX>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetX>
+                          <ui:CursorPosition.OffsetY>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:CursorPosition.OffsetY>
+                        </ui:CursorPosition>
+                      </ui:Click.CursorPosition>
+                      <ui:Click.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="060cd58a7b6c625ea70282937441707d" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bestellanforderung anlegen' /&gt;&lt;sap colName='MATNR' id='usr/subSUB0:SAPLMEGUI:0010/subSUB2:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEGUI:3212/cntlGRIDCONTROL/shellcont/shell' tableRow='6' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:Click.Target>
+                    </ui:Click>
+                    <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'GridViewCell  shell'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_6" Text="[benoetigtesEquipment(benoetigtesEquipmentCounter)]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="060cd58a7b6c625ea70282937441707d" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bestellanforderung anlegen' /&gt;&lt;sap colName='MATNR' id='usr/subSUB0:SAPLMEGUI:0010/subSUB2:SAPLMEVIEWS:1100/subSUB2:SAPLMEVIEWS:1200/subSUB1:SAPLMEGUI:3212/cntlGRIDCONTROL/shellcont/shell' tableRow='6' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                    <Assign sap:VirtualizedContainerService.HintSize="334,62" sap2010:WorkflowViewState.IdRef="Assign_10">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Int32">[benoetigtesEquipmentCounter]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:Int32">[benoetigtesEquipmentCounter]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
           </Sequence>
         </FlowStep>
       </FlowStep.Next>
@@ -187,7 +240,7 @@
           <av:PointCollection x:Key="ConnectorLocation">300,166.333333333333 300,217</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="676.666666666667,1574" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="mitarbeiterDT" />
           <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="mitarbeiterCounter" />
@@ -216,13 +269,13 @@
           </Assign.Value>
         </Assign>
         <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[equipmentTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="634.666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Tabelle1" WorkbookPath="Ressourcen\mitarbeiterEquipment.xlsx" />
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[equipmentTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="634.666666666667,1151.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[equipmentTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="634.666666666667,1253.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="584,998.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="584,1100.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="test" />
                 </Sequence.Variables>
@@ -231,9 +284,9 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[row(&quot;Berufsbezeichnung&quot;).ToString.Contains(mitarbeiterJobTitle)]" sap:VirtualizedContainerService.HintSize="542,906.666666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                <If Condition="[row(&quot;Berufsbezeichnung&quot;).ToString.Contains(mitarbeiterJobTitle)]" sap:VirtualizedContainerService.HintSize="542,1008.66666666667" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="382.666666666667,752.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence sap:VirtualizedContainerService.HintSize="382.666666666667,854.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Default="0" Name="equipmentCounter" />
                       </Sequence.Variables>
@@ -242,6 +295,14 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="340.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_9">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[beschreibungEquipment]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[row("Equipment").ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
                       <Assign sap:VirtualizedContainerService.HintSize="340.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_3">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:String[]">[benoetigtesEquipment]</OutArgument>
