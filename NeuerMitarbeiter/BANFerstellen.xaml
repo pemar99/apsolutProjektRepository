@@ -187,7 +187,7 @@
             <OutArgument x:TypeArguments="x:String">[mitarbeiterName]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[mitarbeiterDT.ToString(mitarbeiterDT.Rows(mitarbeiterCounter).Item("Vorname")) + mitarbeiterDT.ToString(mitarbeiterDT.Rows(mitarbeiterCounter).Item("Name"))]</InArgument>
+            <InArgument x:TypeArguments="x:String">[mitarbeiterDT.Rows(mitarbeiterCounter).Item("Vorname").ToString + mitarbeiterDT.Rows(mitarbeiterCounter).Item("Name").ToString]</InArgument>
           </Assign.Value>
         </Assign>
         <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -195,7 +195,7 @@
             <OutArgument x:TypeArguments="x:String">[mitarbeiterStellenname]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[mitarbeiterDT.ToString(mitarbeiterDT.Rows(mitarbeiterCounter).Item("Berufsbezeichnung"))]</InArgument>
+            <InArgument x:TypeArguments="x:Object">[mitarbeiterDT.Rows(mitarbeiterCounter).Item("Berufsbezeichnung")]</InArgument>
           </Assign.Value>
         </Assign>
       </Sequence>
