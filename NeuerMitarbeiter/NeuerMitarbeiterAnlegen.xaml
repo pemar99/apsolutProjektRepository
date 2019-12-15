@@ -58,8 +58,8 @@
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="NeuerMitarbeiterAnlegen" sap:VirtualizedContainerService.HintSize="634,636" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
-      <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="MAcounter" />
-      <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="MAdt" />
+      <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="maCounter" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="maDT" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -79,7 +79,7 @@
           <av:Size x:Key="ShapeSize">200,66</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="797,5030" sap2010:WorkflowViewState.IdRef="Sequence_2">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dtable" />
           <Variable x:TypeArguments="ui:GenericValue" Name="ma" />
@@ -132,7 +132,7 @@
             </ui:Target>
           </ui:Click.Target>
         </ui:Click>
-        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Gültigkeits...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[dtable.rows(23).item(0).toString]">
+        <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Gültigkeits...'" EmptyField="False" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[dtable.rows(maCounter).item(&quot;Eintrittsdatum&quot;).toString]">
           <ui:TypeInto.Target>
             <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="570a1045923fbd7d2f73e72d45f90259" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Maßnahmen anlegen' /&gt;&lt;sap id='usr/ctxtP0000-BEGDA' /&gt;">
               <ui:Target.TimeoutMS>
@@ -211,7 +211,7 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[dtable.Rows(1).Item(0).ToString.Contains(&quot;Herr&quot;)]" sap:VirtualizedContainerService.HintSize="713,282" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[dtable.Rows(maCounter).Item(&quot;Anrede&quot;).ToString.Contains(&quot;Herr&quot;)]" sap:VirtualizedContainerService.HintSize="713,282" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <ui:SelectItem ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'ComboBox  Anredetext'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="Herr">
                 <ui:SelectItem.Items>
@@ -253,7 +253,7 @@
               </ui:SelectItem>
             </If.Else>
           </If>
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Nachname'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_13" Text="[dtable.Rows(3).Item(0).ToString]">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Nachname'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_13" Text="[dtable.Rows(maCounter).Item(&quot;Name&quot;).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="06cd097e48c18c18972a840e585ca493" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Daten zur Person ändern' /&gt;&lt;sap id='usr/txtP0002-NACHN' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -265,7 +265,7 @@
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Vorname'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" Text="[dtable.Rows(5).Item(0).ToString]">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Vorname'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_14" Text="[dtable.Rows(maCounter).Item(&quot;Vorname&quot;).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f33f7009ea92f3ac81750d31bd593da7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Daten zur Person ändern' /&gt;&lt;sap id='usr/txtP0002-VORNA' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -277,7 +277,7 @@
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Geburtsdatum'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_15" Text="[dtable.Rows(7).Item(0).ToString]">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Geburtsdatum'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_15" Text="[dtable.Rows(maCounter).Item(&quot;Eintrittsdatum&quot;).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="01a24dc3f7b95a192f51b52511121262" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Daten zur Person ändern' /&gt;&lt;sap id='usr/ctxtP0002-GBDAT' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -326,7 +326,7 @@
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Gültigkeits...'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_19" Text="[dtable.Rows(30).Item(0).ToString]">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Gültigkeits...'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_19" Text="[dtable.Rows(maCounter).Item(&quot;Eintrittsdatum&quot;).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="37f0b3619db58cfd12efc9f654491946" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Kommunikation anlegen' /&gt;&lt;sap id='usr/ctxtP0105-BEGDA' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -339,7 +339,7 @@
             </ui:TypeInto.Target>
           </ui:TypeInto>
           <ui:Comment sap:VirtualizedContainerService.HintSize="713,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Email Adresse noch in Personalbogen einfügen&#xA;" />
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Kommunikation'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_20" Text="[dtable.Rows(xx).Item(0).ToString]">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField Kommunikation'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_20" Text="[dtable.Rows(maCounter).Item(&quot;Email-Adresse&quot;).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="e567ba8908f11df467bc52ae8a624eae" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Kommunikation anlegen' /&gt;&lt;sap id='usr/txtP0105-USRID' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -397,7 +397,7 @@
               </ui:Target>
             </ui:TypeInto.Target>
           </ui:TypeInto>
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Empfängertext'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_23" Text="[dtable.Rows(xx).Item(0).ToString]">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField  Empfängertext'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_23" Text="[dtable.Rows(maCounter).Item(&quot;Bankname&quot;).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a901ac3497ecbb1df201ba812b64e1cd" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bankverbindung anlegen' /&gt;&lt;sap id='usr/txtQ0009-EMFTX' /&gt;">
                 <ui:Target.TimeoutMS>
@@ -410,7 +410,7 @@
             </ui:TypeInto.Target>
           </ui:TypeInto>
           <ui:Comment sap:VirtualizedContainerService.HintSize="713,74" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Durch die IBAN wird die Bank automatisch ermittelt" />
-          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField IBAN'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" Text="[dtable(xx).Item(0).ToString]">
+          <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TextField IBAN'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_24" Text="[dtable(maCounter).Item(&quot;IBAN&quot;).ToString]">
             <ui:TypeInto.Target>
               <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a3274d0846776e727870de21561600a7" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bankverbindung anlegen' /&gt;&lt;sap id='usr/txtQ0009-IBAN00' /&gt;">
                 <ui:Target.TimeoutMS>
