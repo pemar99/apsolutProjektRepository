@@ -90,7 +90,7 @@
         </sap:WorkflowViewStateService.ViewState>
         <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'OkCodeField  okcd'" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="me51n [k(Enter)]">
           <ui:TypeInto.Target>
-            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ada35df78c710555df688560307619a4" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access  -  Benutzermenü für Marco kalcher' /&gt;&lt;sap id='tbar[0]/okcd' /&gt;">
+            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="ada35df78c710555df688560307619a4" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='SAP Easy Access*' /&gt;&lt;sap id='tbar[0]/okcd' /&gt;">
               <ui:Target.TimeoutMS>
                 <InArgument x:TypeArguments="x:Int32" />
               </ui:Target.TimeoutMS>
@@ -100,7 +100,7 @@
             </ui:Target>
           </ui:TypeInto.Target>
         </ui:TypeInto>
-        <ui:Comment sap:VirtualizedContainerService.HintSize="334,74.6666666666667" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Transaktion wird geöffnet. Habs mal in me51n geändert." />
+        <ui:Comment sap:VirtualizedContainerService.HintSize="334,55.3333333333333" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Transaktion wird geöffnet." />
       </Sequence>
       <FlowStep.Next>
         <FlowStep x:Name="__ReferenceID1">
@@ -175,9 +175,8 @@
           <av:PointCollection x:Key="ConnectorLocation">300,166.333333333333 300,217</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="304,356" sap2010:WorkflowViewState.IdRef="Sequence_3">
+      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="304,256" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
-          <Variable x:TypeArguments="x:String" Name="excelPath" />
           <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="mitarbeiterDT" />
           <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="mitarbeiterCounter" />
         </Sequence.Variables>
@@ -186,7 +185,7 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[mitarbeiterName]</OutArgument>
           </Assign.To>
@@ -194,18 +193,13 @@
             <InArgument x:TypeArguments="x:String">[mitarbeiterDT.Rows(mitarbeiterCounter).Item("Vorname").ToString + mitarbeiterDT.Rows(mitarbeiterCounter).Item("Name").ToString]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[mitarbeiterStellenname]</OutArgument>
           </Assign.To>
           <Assign.Value>
             <InArgument x:TypeArguments="x:String">[mitarbeiterDT.Rows(mitarbeiterCounter).Item("Berufsbezeichnung").ToString]</InArgument>
           </Assign.Value>
-        </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="262,61.3333333333333" sap2010:WorkflowViewState.IdRef="Assign_3">
-          <Assign.To>
-            <OutArgument x:TypeArguments="x:String">[excelPath]</OutArgument>
-          </Assign.To>
         </Assign>
       </Sequence>
       <FlowStep.Next>
