@@ -107,8 +107,8 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="neuer Mitarbeiter anlegen" sap:VirtualizedContainerService.HintSize="340,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="NeuerMitarbeiter\NeuerMitarbeiterAnlegen.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="maDT" />
-          <InArgument x:TypeArguments="x:Boolean" x:Key="maCounter" />
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="maDT">[mitarbeiterDTeingelesen]</InArgument>
+          <InArgument x:TypeArguments="x:Int32" x:Key="maCounter">[mitarbeiterCounter]</InArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
