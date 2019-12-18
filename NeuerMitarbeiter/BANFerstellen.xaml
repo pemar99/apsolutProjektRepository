@@ -64,12 +64,16 @@
     <Flowchart.Variables>
       <Variable x:TypeArguments="s:String[]" Name="benoetigtesEquipment" />
       <Variable x:TypeArguments="x:String" Name="beschreibungEquipment" />
+      <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="mitarbeiterDT" />
+      <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="mitarbeiterCounter" />
+      <Variable x:TypeArguments="sd:DataTable" Name="equipmentTable" />
+      <Variable x:TypeArguments="x:String" Name="mitarbeiterJobTitle" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
-        <av:Size x:Key="ShapeSize">60,74.6666666666667</av:Size>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,97</av:PointCollection>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
@@ -80,11 +84,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,217</av:Point>
-          <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,286.333333333333 300,336.333333333333</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,283 300,336.333333333333</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Transaktion öffnen" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_1">
+      <Sequence DisplayName="Transaktion öffnen" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_1">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -121,10 +125,10 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">200,336.333333333333</av:Point>
-              <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
+              <av:Size x:Key="ShapeSize">200,66</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="BANF anlegen" sap:VirtualizedContainerService.HintSize="200,69.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+          <Sequence DisplayName="BANF anlegen" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_15">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Int32" Default="0" Name="benoetigtesEquipmentCounter" />
             </Sequence.Variables>
@@ -296,38 +300,32 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">200,97</av:Point>
-          <av:Size x:Key="ShapeSize">200,69.3333333333333</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,166.333333333333 300,217</av:PointCollection>
+          <av:Size x:Key="ShapeSize">200,66</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,163 300,217</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="676.666666666667,1574" sap2010:WorkflowViewState.IdRef="Sequence_3">
-        <Sequence.Variables>
-          <Variable x:TypeArguments="sd:DataTable" Default="[mitarbeiterDTArg]" Name="mitarbeiterDT" />
-          <Variable x:TypeArguments="x:Int32" Default="[mitarbeiterCounterArg]" Name="mitarbeiterCounter" />
-          <Variable x:TypeArguments="sd:DataTable" Name="equipmentTable" />
-          <Variable x:TypeArguments="x:String" Name="mitarbeiterJobTitle" />
-        </Sequence.Variables>
+      <Sequence DisplayName="Daten extrahieren" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <Assign sap:VirtualizedContainerService.HintSize="634.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_2">
+        <Assign sap:VirtualizedContainerService.HintSize="633,60" sap2010:WorkflowViewState.IdRef="Assign_2">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[mitarbeiterJobTitle]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[mitarbeiterDT.Rows(mitarbeiterCounter).Item("Berufsbezeichnung").ToString]</InArgument>
+            <InArgument x:TypeArguments="x:String">["Reinigungskraft"]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[equipmentTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="634.666666666667,86.6666666666667" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Tabelle1" WorkbookPath="Ressourcen\mitarbeiterEquipment.xlsx" />
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[equipmentTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="634.666666666667,1253.33333333333" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[equipmentTable]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="633,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Tabelle1" WorkbookPath="Ressourcen\mitarbeiterEquipment.xlsx" />
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[equipmentTable]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="633,1219" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="584,1100.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="583,1071" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="test" />
                 </Sequence.Variables>
@@ -336,9 +334,9 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[row(&quot;Berufsbezeichnung&quot;).ToString.Contains(mitarbeiterJobTitle)]" sap:VirtualizedContainerService.HintSize="542,1008.66666666667" sap2010:WorkflowViewState.IdRef="If_2">
+                <If Condition="[row(&quot;Berufsbezeichnung&quot;).ToString.Contains(mitarbeiterJobTitle)]" sap:VirtualizedContainerService.HintSize="541,979" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="382.666666666667,854.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <Sequence sap:VirtualizedContainerService.HintSize="382,831" sap2010:WorkflowViewState.IdRef="Sequence_7">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Int32" Default="0" Name="equipmentCounter" />
                       </Sequence.Variables>
@@ -347,15 +345,32 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="340.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_9">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:String">[beschreibungEquipment]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[row("Equipment").ToString]</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                      <Assign sap:VirtualizedContainerService.HintSize="340.666666666667,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="340,51" sap2010:WorkflowViewState.IdRef="CommentOut_12">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[beschreibungEquipment]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[row("Equipment").ToString]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
+                      <Assign sap:VirtualizedContainerService.HintSize="340,60" sap2010:WorkflowViewState.IdRef="Assign_3">
                         <Assign.To>
                           <OutArgument x:TypeArguments="s:String[]">[benoetigtesEquipment]</OutArgument>
                         </Assign.To>
@@ -363,19 +378,19 @@
                           <InArgument x:TypeArguments="s:String[]">[Split(row("Material").ToString, ",")]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="340.666666666667,496.666666666667" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[benoetigtesEquipment]">
+                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="340,486" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[benoetigtesEquipment]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="304,358" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence DisplayName="Text" sap:VirtualizedContainerService.HintSize="304,352" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[benoetigtesEquipment(equipmentCounter)]</OutArgument>
                                 </Assign.To>
@@ -383,7 +398,7 @@
                                   <InArgument x:TypeArguments="x:String">[benoetigtesEquipment(equipmentCounter).Replace(" ", [String].Empty)]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_8">
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[test]</OutArgument>
                                 </Assign.To>
@@ -391,7 +406,7 @@
                                   <InArgument x:TypeArguments="x:String">[test + benoetigtesEquipment(equipmentCounter) + vbCrLf]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,62" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Int32">[equipmentCounter]</OutArgument>
                                 </Assign.To>
@@ -403,7 +418,7 @@
                           </ActivityAction>
                         </ui:ForEach.Body>
                       </ui:ForEach>
-                      <ui:Break DisplayName="Break" sap:VirtualizedContainerService.HintSize="340.666666666667,22" sap2010:WorkflowViewState.IdRef="Break_1" />
+                      <ui:Break DisplayName="Break" sap:VirtualizedContainerService.HintSize="340,22" sap2010:WorkflowViewState.IdRef="Break_1" />
                     </Sequence>
                   </If.Then>
                 </If>

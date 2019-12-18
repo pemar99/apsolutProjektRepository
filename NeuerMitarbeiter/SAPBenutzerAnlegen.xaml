@@ -135,7 +135,7 @@
                   </ui:Target>
                 </ui:TypeInto.Target>
               </ui:TypeInto>
-              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Benutzername'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_36" SendWindowMessages="False" SimulateType="False" Text="[&quot;MAtest&quot;+mitarbeiterCounter.toString+&quot;[k(f8)]&quot;]">
+              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField Benutzername'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_36" SendWindowMessages="False" SimulateType="False" Text="[&quot;BMustermann&quot;+mitarbeiterCounter.toString+&quot;[k(f8)]&quot;]">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b7cd45649101b21816a0c378b42cff73" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Benutzerpflege: Einstieg' /&gt;&lt;sap id='usr/ctxtSUID_ST_BNAME-BNAME' /&gt;">
                     <ui:Target.TimeoutMS>
