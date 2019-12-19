@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>654,736</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>654,696</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>NeuerMitarbeiterAnlegen_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -141,7 +141,7 @@
               <av:Size x:Key="ShapeSize">200,66</av:Size>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <Sequence DisplayName="MA anlegen" sap:VirtualizedContainerService.HintSize="797,6369" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <Sequence DisplayName="MA anlegen" sap:VirtualizedContainerService.HintSize="797,6591" sap2010:WorkflowViewState.IdRef="Sequence_8">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -242,9 +242,38 @@
               </ui:TypeInto.Target>
             </ui:TypeInto>
             <ui:Comment sap:VirtualizedContainerService.HintSize="755,55" sap2010:WorkflowViewState.IdRef="Comment_6" Text="// Tastenkombi zum Speichern&#xA;" />
-            <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'UserArea  usr'" sap:VirtualizedContainerService.HintSize="755,134" sap2010:WorkflowViewState.IdRef="TypeInto_31" Text="%[d(ctrl)] s [u(ctrl)]">
-              <ui:TypeInto.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f7e5fc4a36b2256748f8c672e62711ad" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Maßnahmen anlegen' /&gt;">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="755,51" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'UserArea  usr'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_31" Text="%[d(ctrl)] s [u(ctrl)]">
+                    <ui:TypeInto.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="f7e5fc4a36b2256748f8c672e62711ad" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Maßnahmen anlegen' /&gt;">
+                        <ui:Target.TimeoutMS>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:Target.TimeoutMS>
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:TypeInto.Target>
+                  </ui:TypeInto>
+                </Sequence>
+              </ui:CommentOut.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:CommentOut>
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'saplogon.exe Maßnahmen'" sap:VirtualizedContainerService.HintSize="755,154" sap2010:WorkflowViewState.IdRef="SendHotkey_7" Key="s" KeyModifiers="Ctrl">
+              <ui:SendHotkey.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="64c961511f98b75ad263c460e740bae8" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Maßnahmen anlegen' /&gt;">
                   <ui:Target.TimeoutMS>
                     <InArgument x:TypeArguments="x:Int32" />
                   </ui:Target.TimeoutMS>
@@ -252,9 +281,9 @@
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
                 </ui:Target>
-              </ui:TypeInto.Target>
-            </ui:TypeInto>
-            <Sequence sap:VirtualizedContainerService.HintSize="755,4818" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              </ui:SendHotkey.Target>
+            </ui:SendHotkey>
+            <Sequence sap:VirtualizedContainerService.HintSize="755,4929" sap2010:WorkflowViewState.IdRef="Sequence_7">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -405,9 +434,38 @@
                 </ui:SelectItem.Target>
               </ui:SelectItem>
               <ui:Comment sap:VirtualizedContainerService.HintSize="713,150" sap2010:WorkflowViewState.IdRef="Comment_7" Text="// Hab erstmal Konfession außenvorgelassen. Heikles Thema - guckt euch mal die ganzen Möglichkeiten in SAP an. Dennoch nicht zu vernachlässigen, weil in den Stammdaten angegeben werden sollte ob der Mitarbeiter KiSt-pflichtig ist oder nicht." />
-              <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'saplogon.exe Daten'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_35" Text="%[d(ctrl)] s [u(ctrl)]">
-                <ui:TypeInto.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1e9a19e6fb0222e3670719dd33d68d37" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Daten zur Person anlegen' /&gt;">
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="713,51" sap2010:WorkflowViewState.IdRef="CommentOut_15">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignorierte Aktivitäten" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'saplogon.exe Daten'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_35" Text="%[d(ctrl)] s [u(ctrl)]">
+                      <ui:TypeInto.Target>
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1e9a19e6fb0222e3670719dd33d68d37" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Daten zur Person anlegen' /&gt;">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                          <ui:Target.WaitForReady>
+                            <InArgument x:TypeArguments="ui:WaitForReady" />
+                          </ui:Target.WaitForReady>
+                        </ui:Target>
+                      </ui:TypeInto.Target>
+                    </ui:TypeInto>
+                  </Sequence>
+                </ui:CommentOut.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:CommentOut>
+              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'saplogon.exe Daten'" sap:VirtualizedContainerService.HintSize="713,154" sap2010:WorkflowViewState.IdRef="SendHotkey_8" Key="s" KeyModifiers="Ctrl">
+                <ui:SendHotkey.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="1ab31df88ba7535f6f95b62af0a9fe31" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Daten zur Person anlegen' /&gt;">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
@@ -415,8 +473,8 @@
                       <InArgument x:TypeArguments="ui:WaitForReady" />
                     </ui:Target.WaitForReady>
                   </ui:Target>
-                </ui:TypeInto.Target>
-              </ui:TypeInto>
+                </ui:SendHotkey.Target>
+              </ui:SendHotkey>
               <ui:TypeInto ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'CTextField  Personaltei...'" sap:VirtualizedContainerService.HintSize="713,134" sap2010:WorkflowViewState.IdRef="TypeInto_47" Text="1010">
                 <ui:TypeInto.Target>
                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="692bfee16830dc106514d6e257960319" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Organisatorische Zuordnung anlegen' /&gt;&lt;sap id='usr/ctxtP0001-BTRTL' /&gt;">
@@ -573,7 +631,7 @@
               </ui:SendHotkey>
               <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'saplogon.exe Bankverbin...'" sap:VirtualizedContainerService.HintSize="713,154" sap2010:WorkflowViewState.IdRef="SendHotkey_6" Key="s" KeyModifiers="Ctrl">
                 <ui:SendHotkey.Target>
-                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="34d30bc613436e81182f9579af3b9a91" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bankverbindung anlegen' /&gt;">
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="77908baef98aa7d310fb1a9119583155" Selector="&lt;wnd app='saplogon.exe' cls='SAP_FRONTEND_SESSION' title='Bankverbindung anlegen' /&gt;">
                     <ui:Target.TimeoutMS>
                       <InArgument x:TypeArguments="x:Int32" />
                     </ui:Target.TimeoutMS>
